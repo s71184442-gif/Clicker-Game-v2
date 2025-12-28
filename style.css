@@ -1,0 +1,32 @@
+button {
+    transform: translate(650px,300px);
+}
+button#up {
+    transform: translate(0px,0px);
+    
+}
+h3 {
+    transform: translate(1250px,50px);
+}
+h3#song1 {
+    transform: translate(1150px,150px);
+}
+button#active {
+    transform: translate(0px,0px);
+}
+audio {
+    transform: translate(0px,0px);
+    
+}
+h1 {
+    transform: translate(700px,0px);
+}
+h3#oio {
+    transform: translate(1200px,350px);
+}
+button#oioiplayer {
+    transform: translate(0px,0px);
+}
+button#autoclicker {
+    transform: translate(0px,0px);
+}

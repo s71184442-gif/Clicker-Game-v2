@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: black; color: white;">
+    <table bgcolor="black">
+        <tr bgcolor="grey" align="center">
+            <td>
+                <h2 id="upg0" style="border-radius: 10px; color: aqua;">click upgrade cost:20 :     </h2></td>
+            <td>
+                <h2 id="song1" style="border-radius: 10px; color: aqua;">relaxing song cost:50 :</h2></td>
+            <td>
+                <h2 id="oio" style="color: aqua">oioi song! cost: 100 clicks</h2>
+            </td>
+            <td>
+                <h2 style="color: aqua" id="aut">autoclicker cost: 200 clicks</h2>
+        </tr>
+        <tr bgcolor="lightgrey" align="center">
+            <td>
+                 <button id="up" disabled style="background-color: blue; color: black; border-radius: 10px; width: 100px; height: 50px">buy</button>
+            </td>
+            <td>
+                <button id="active" disabled style="background-color: blueviolet; color: black; width: 100px; height: 50px; border-radius: 10px">buy</button>
+            </td>
+            <td>
+                <button id="oioiplayer" disabled style="background-color: aqua; color: black; width: 100px; height: 50px; border-radius: 10px">buy</button>    
+            </td>
+            <td>
+                <button id="autoclicker" disabled style="background-color: red; color: black; width: 100px; height: 50px; border-radius: 10px">buy</button>    
+            </td>
+        </tr>
+        
+    </table>
+    
+    <h1>Clicker game</h1>
+    
+    <audio src="videoplayback.m4a" id="o" ></audio>;
+    <span>
+    <audio src="Luminote, Классическая музыка для сна — Для Сна. Классическая Музыка, Аудио и Звуки для Сна. Успокаивающая Музыка для Глубокого Сна и Засыпания. Calm Classical Music for Sleep and Relaxing (www.lightaudio.ru).mp3"  id="song" disabled autoplay width="20px" style="background-color: aqua"></audio>;
+    </span>
+    
+    
+   
+    <button id="btn" style="background-color: blue; color: antiquewhite; border-radius: 10px; width: 300px; height: 150px " style="font-size: larger;"></button>
+    <script>
+        let song = document.getElementById('song');
+        
+        let x = 0;
+        let btn = document.getElementById('btn');
+        btn.onclick = () => btn.textContent = ++x;
+        let up = document.getElementById('up');
+        let interval = setInterval(() => {
+            if (x === 20) {
+                up.disabled = false;
+                clearInterval(interval);
+            }
+        }, 0);
+        let active = document.getElementById('active');
+        let interval1 = setInterval(() => {
+            if (x >= 50) {
+                active.disabled = false;
+
+                clearInterval(interval1);
+            }
+        }, 0);
+       
+        
+        
+        
+
+
+        up.onclick = () => {
+            btn.onclick = () => btn.textContent = x += 2;
+            up.hidden = true;
+            upg0.hidden = true;
+            x = x - 20;
+        }
+        
+        
+        active.onclick = () => {
+            song.controls = true;
+            active.hidden = true;
+            song1.hidden = true;
+            x = x - 50;
+            
+        }
+        o.disabled = true;
+        oioiplayer.onclick = () => {
+            o.controls = true;
+            oioiplayer.hidden = true;
+            oio.hidden = true;
+            x = x - 100;
+            
+        }
+        let play = document.getElementById('oioiplayer');
+        let interval2 = setInterval(() => {
+            if (x >= 100) {
+                play.disabled = false;
+                
+                clearInterval(interval2);
+            }
+        }, 0);
+        
+        let autoclicker = document.getElementById('autoclicker');
+        let interval3 = setInterval(() => {
+            if (x >= 200) {
+                autoclicker.disabled = false;
+                
+                clearInterval(interval3);
+            }
+        }, 0);
+        autoclicker.onclick = () => {
+
+            setInterval(() => {
+                btn.textContent = ++x;
+            }, 250);
+            autoclicker.hidden = true;
+            aut.hidden = true;
+            
+            x = x - 200;
+        }
+        
+    </script>
+    
+   
+</body>
+</html>
